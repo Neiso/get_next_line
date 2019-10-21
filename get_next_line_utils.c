@@ -3,16 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djulian <djulian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 10:38:23 by djulian           #+#    #+#             */
-/*   Updated: 2019/10/16 10:53:23 by djulian          ###   ########.fr       */
+/*   Updated: 2019/10/19 16:43:38 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-
-int		get_next_line(int fd, char **line)
-{
-
-}
