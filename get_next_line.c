@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 16:43:16 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/19 19:16:48 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/21 15:45:09 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 int		get_next_line(int fd, char **line)
 {
-    int static	line_nb;
-	char		buffer[];
-	int 		eof;
+	static int size;
+	static char buffer[BUFFER_SIZE];
+	static int i;
 
-	eof = read(fd, buffer, 20);
-    buffer[eof - 1] = '\0';
-	line = 0;
-	printf("%s", buffer);
-	return (0);
+	if (!buffer)
+		
+	return (1);
 }
 
 int main(int argc, char **argv)
@@ -32,6 +30,10 @@ int main(int argc, char **argv)
 	char **tab;
 
 	tab = (char**)malloc(sizeof(char*) * 100);
-	fd = open("test.txt", O_RDONLY);
+
+	fd = open(argv[1], O_RDONLY);
+	
 	get_next_line(fd, tab);
+	
+	return (0);
 }
