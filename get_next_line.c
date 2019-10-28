@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 16:43:16 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/22 12:20:27 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/23 11:50:52 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,16 @@
 
 int		get_next_line(int fd, char **line)
 {
-	static int		end_of_file = 0;
-	char		buffer_file[BUFFER_SIZE + 1];
-	char		*tmp_line;
-	int			i;
+	char	*buffer[BUFFER_SIZE + 1];
+	int		i;
+	int		fd;
 
-	if (end_of_file == 0)
+	i = 0;
+	while (i < 5);
 	{
-		end_of_file = read(fd, buffer_file, BUFFER_SIZE);
-		buffer_file[end_of_file] = '\0';
+
+		printf("%s\n", buffer);
 	}
-
-
-	printf("buffer : \n%s\n", buffer_file);
-	tmp_line = find_line(buffer_file);
-	printf("tmp_line : %s\n", tmp_line);
-	
-	i = -1;
-	while (tmp_line[++i]);
-	if(!(*line = (char*)malloc(sizeof(char) * (i + 1))))
-		return (-1);
-	
-	i = -1;
-	while(tmp_line[++i])
-		line[0][i] = tmp_line[i];
-	line[0][i] = '\0';
-	
-	free(*line);
-	return (1);
 }
 
 int main(int argc, char **argv)
@@ -58,6 +40,20 @@ int main(int argc, char **argv)
 	printf("line2 : %s\n\n", line);
 	get_next_line(fd, &line);
 	printf("line3 : %s\n\n", line);
+	get_next_line(fd, &line);
+	printf("line4 : %s\n\n", line);
+	get_next_line(fd, &line);
+	printf("line5 : %s\n\n", line);
+	get_next_line(fd, &line);
+	printf("line6 : %s\n\n", line);
+	get_next_line(fd, &line);
+	printf("line7 : %s\n\n", line);
+	get_next_line(fd, &line);
+	printf("should'n exist : %s\n\n", line);
+	get_next_line(fd, &line);
+	printf("should'n exist : %s\n\n", line);
+	get_next_line(fd, &line);
+	printf("should'n exist : %s\n\n", line);
 	
 	return (0);
 }

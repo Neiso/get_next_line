@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 10:44:55 by djulian           #+#    #+#             */
-/*   Updated: 2019/10/22 09:34:04 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/22 14:18:16 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
-# define BUFFER_SIZE 1000
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1000
+# endif
 
 char	*malloc_and_fill_line(char *line);
 char	*find_line(char *buffer_file);
