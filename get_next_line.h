@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 10:44:55 by djulian           #+#    #+#             */
-/*   Updated: 2019/10/22 14:18:16 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/28 08:45:11 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000
+#  define BUFFER_SIZE 3
 # endif
 
 char	*malloc_and_fill_line(char *line);
