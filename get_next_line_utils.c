@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 10:38:23 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/29 09:26:13 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/29 13:31:01 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ char	*fill_line(char *buffer, char *line)
 	i = (i == -1 ? 0 : i);
 	line_cpy[i] = '\0';
 	i = -1;
-	free(line);
+	// free(line);
 	if (!(line = (char*)malloc(ft_strlen(buffer) + ft_strlen(line_cpy) + 1)))
 		return (NULL);
 	while (line_cpy[++i])

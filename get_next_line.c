@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 16:43:16 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/29 10:05:00 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/29 13:29:53 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,23 +55,23 @@ int		get_next_line(int fd, char **line)
 	return (1);
 }
 
-int main(int argc, char **argv)
-{
-	(void)argc;
-	int fd;
-	char *line;
+// int main(int argc, char **argv)
+// {
+// 	(void)argc;
+// 	int fd;
+// 	char *line;
 	
-	fd = open(argv[1], O_RDONLY);
-	printf("return value : %d\n", get_next_line(fd, &line));
-	printf("line final 1 : %s\n", line);
-	get_next_line(fd, &line);
-	// printf("line final 2 : %s\n", line);
-	// get_next_line(fd, &line);
-	// printf("line final 3 : %s\n", line);
-	// get_next_line(fd, &line);
-	// printf("line final 4 : %s\n", line);
-	// get_next_line(fd, &line);
-	// printf("line final 5 : %s\n", line);
-	// get_next_line(fd, &line);
-	// printf("line final 6 : %s\n", line);
-}
+// 	fd = open(argv[1], O_RDONLY);
+// 	printf("return value : %d\n", get_next_line(fd, &line));
+// 	printf("line final 1 : %s\n", line);
+// 	get_next_line(fd, &line);
+// 	// printf("line final 2 : %s\n", line);
+// 	// get_next_line(fd, &line);
+// 	// printf("line final 3 : %s\n", line);
+// 	// get_next_line(fd, &line);
+// 	// printf("line final 4 : %s\n", line);
+// 	// get_next_line(fd, &line);
+// 	// printf("line final 5 : %s\n", line);
+// 	// get_next_line(fd, &line);
+// 	// printf("line final 6 : %s\n", line);
+// }
