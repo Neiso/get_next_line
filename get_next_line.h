@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 10:44:55 by djulian           #+#    #+#             */
-/*   Updated: 2019/10/28 08:45:11 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/29 09:02:17 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@
 #  define BUFFER_SIZE 3
 # endif
 
-char	*malloc_and_fill_line(char *line);
-char	*find_line(char *buffer_file);
 int		get_next_line(int fd, char **line);
+char	*line_break_in_buffer(char *buffer, char *line);
+int		search_line_break (char *s);
+int		ft_strlen(char *s);
+char	*fill_line(char *buffer, char *line);
 
 #endif
