@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 16:43:16 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/29 13:29:53 by douatla          ###   ########.fr       */
+/*   Updated: 2019/11/05 17:07:09 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int		get_next_line(int fd, char **line)
 	int				eof;
 	static char		buffer[BUFFER_SIZE + 1] = {0};
 
-	if (fd < 0)
-		return (-1);
+	if (line == NULL || fd < 0)
+		return(-1);
 	*line = NULL;
 	if (search_line_break(buffer))
 		*line = line_break_in_buffer(buffer, *line);
@@ -41,37 +41,12 @@ int		get_next_line(int fd, char **line)
 		eof = read(fd, buffer, BUFFER_SIZE);
 		if (eof == -1)
 			return (-1);
-		printf("eof : %d\n", eof);
 		buffer[eof] = '\0';
 		*line = fill_line(buffer, *line);
 		if (search_line_break(buffer))
 			break ;
 	}
-	if (*line == NULL)
-		return (-1);
-	if (eof == 0)
+	if (eof == 0 && *line[0] == '\0')
 		return (0);
-	free(*line);
 	return (1);
 }
-
-// int main(int argc, char **argv)
-// {
-// 	(void)argc;
-// 	int fd;
-// 	char *line;
-	
-// 	fd = open(argv[1], O_RDONLY);
-// 	printf("return value : %d\n", get_next_line(fd, &line));
-// 	printf("line final 1 : %s\n", line);
-// 	get_next_line(fd, &line);
-// 	// printf("line final 2 : %s\n", line);
-// 	// get_next_line(fd, &line);
-// 	// printf("line final 3 : %s\n", line);
-// 	// get_next_line(fd, &line);
-// 	// printf("line final 4 : %s\n", line);
-// 	// get_next_line(fd, &line);
-// 	// printf("line final 5 : %s\n", line);
-// 	// get_next_line(fd, &line);
-// 	// printf("line final 6 : %s\n", line);
-// }

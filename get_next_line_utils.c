@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 10:38:23 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/29 13:31:01 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/30 10:37:55 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ char	*line_break_in_buffer(char *buffer, char *line)
 	while (buffer[++tmp] != '\n' && buffer[tmp] != '\0')
 		line[++i] = buffer[tmp];
 	line[++i] = '\0';
+	free(line);
 	return (line);
 }
 
@@ -124,15 +125,16 @@ char	*fill_line(char *buffer, char *line)
 	i = (i == -1 ? 0 : i);
 	line_cpy[i] = '\0';
 	i = -1;
-	// free(line);
 	if (!(line = (char*)malloc(ft_strlen(buffer) + ft_strlen(line_cpy) + 1)))
 		return (NULL);
 	while (line_cpy[++i])
 		line[i] = line_cpy[i];
+	free(line_cpy);
 	j = -1;
 	i--;
 	while (buffer[++j] && buffer[j] != '\n')
 		line[++i] = buffer[j];
 	line[++i] = '\0';
+	free(line);
 	return (line);
 }
