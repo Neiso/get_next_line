@@ -6,24 +6,11 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 16:43:16 by douatla           #+#    #+#             */
-/*   Updated: 2019/11/05 17:07:09 by douatla          ###   ########.fr       */
+/*   Updated: 2019/11/14 15:24:13 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-/*
-**	There are two cases scenarios :
-**		-The buffer is empty or clean so it will enter the WHILE loop and gets
-**		  filled up by the READ function. Then the input LINE will be write up
-**		  till a line break is found in the buffer. Then, it gets out from the
-**		  WHILE loop
-**
-**		-The buffer is not clean so there are still lines breaks in it. So it
-**		  will fill up multiples lines as long as the function is called and the
-**		  buffer is not clean. It won't be any more READ call until the buffer
-**		  is entirely clean.
-*/
 
 int		get_next_line(int fd, char **line)
 {
@@ -50,3 +37,14 @@ int		get_next_line(int fd, char **line)
 		return (0);
 	return (1);
 }
+
+// int main()
+// {
+// 	int fd;
+// 	char *line;
+
+// 	line = NULL;
+// 	fd = open("test_null_cases.txt", O_RDONLY);
+// 	get_next_line(fd, &line);
+// 	printf("LINE EST : %s\n", line);
+// }
