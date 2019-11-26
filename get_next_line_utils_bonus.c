@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/16 10:38:23 by djulian           #+#    #+#             */
-/*   Updated: 2019/11/25 12:05:45 by douatla          ###   ########.fr       */
+/*   Created: 2019/11/25 12:21:59 by douatla           #+#    #+#             */
+/*   Updated: 2019/11/26 10:11:37 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 /*
 **	after the first call of the function, if a line break is found in the buffer
