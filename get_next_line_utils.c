@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/16 10:38:23 by djulian           #+#    #+#             */
-/*   Updated: 2019/11/25 12:05:45 by douatla          ###   ########.fr       */
+/*   Created: 2019/11/25 12:21:59 by douatla           #+#    #+#             */
+/*   Updated: 2020/03/04 14:21:07 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 **	buffer.
 */
 
-char	*line_break_in_buffer(char *buffer, char *line)
+char	*lb_buf(char *buffer, char *line)
 {
 	int		i;
 	int		tmp;
@@ -37,14 +37,10 @@ char	*line_break_in_buffer(char *buffer, char *line)
 	while (buffer[++i] != '\n')
 		buffer[i] = '0';
 	buffer[i] = '0';
-	if (buffer[++i] == '\0')
-	{
-		buffer[--i] = '0';
-		return (NULL);
-	}
-	tmp = i - 1;
+	tmp = i;
 	while (buffer[i] != '\n' && buffer[i] != '\0')
 		i++;
+	free(line);
 	if (!(line = (char*)malloc(i - tmp)))
 		return (NULL);
 	i = -1;
@@ -70,7 +66,7 @@ char	*line_break_in_buffer(char *buffer, char *line)
 **		before any READ call.
 */
 
-int		search_line_break(char *s)
+int		search_lb(char *s)
 {
 	int i;
 	int booleen;
@@ -92,7 +88,7 @@ int		search_line_break(char *s)
 **	so the malloc for line is done properly
 */
 
-int		ft_strlen(char *s)
+int		ft_strlen2(char *s)
 {
 	int i;
 
@@ -116,19 +112,20 @@ char	*fill_line(char *buffer, char *line)
 	int		i;
 	int		j;
 
-	if (!(line_cpy = (char*)malloc(ft_strlen(line) + 1)))
+	if (!(line_cpy = (char*)malloc(ft_strlen2(line) + 1)))
 		return (NULL);
 	i = -1;
 	while (line != NULL && line[++i])
 		line_cpy[i] = line[i];
 	i = (i == -1 ? 0 : i);
 	line_cpy[i] = '\0';
-	free(line_cpy);
 	i = -1;
-	if (!(line = (char*)malloc(ft_strlen(buffer) + ft_strlen(line_cpy) + 1)))
+	free(line);
+	if (!(line = (char*)malloc(ft_strlen2(buffer) + ft_strlen2(line_cpy) + 1)))
 		return (NULL);
 	while (line_cpy[++i])
 		line[i] = line_cpy[i];
+	free(line_cpy);
 	j = -1;
 	i--;
 	while (buffer[++j] && buffer[j] != '\n')
